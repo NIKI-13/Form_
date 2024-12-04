@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 35px;
+            background-color: white;
+            height: 180px;
+            width: 300px;
+            position: relative;
+        }
+
+        .form-title {
+            color: rgb(53, 125, 226);
+            font-size: 35px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 25px;
+            font-weight: bolder; 
+        }
+
+        .form-container label {
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 10px; 
+            display: block; 
+        }
+
+        .form-container input[type="number"] {
+            font-size: 16px;
+            padding: 4px;
+            width: calc(100% - 12px);
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 7px;
+            display: block; 
+        }
+
+        .form-container input[type="submit"] {
+            position: absolute;
+            bottom: 40px; 
+            right: 35px; 
+            background-color: white;
+            color: rgb(53, 125, 226);
+            border: 3px solid rgb(53, 125, 226);
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bolder; 
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        function checkNumber() {
+            var number = document.getElementById("numberInput").value;
+            if (number <= 10) {
+                alert("Please enter a number greater than 10.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-title">Form</div>
+        <form onsubmit="return checkNumber()">
+            <label for="numberInput">Number</label>
+            <input type="number" id="numberInput" name="number" placeholder="Please enter a number" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
